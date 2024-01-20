@@ -1,0 +1,147 @@
+ <div class="accordion mb-3" id="accordionExample">
+              <!-- Initial accordion item -->
+              <div class="accordion-item" id="workout1">
+                  <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Workout 1
+                      </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+      
+                        <div class="row mb-3 bg-light py-3 rounded-3">
+                          <div class="mb-3 col-md-6">
+                              <label for="workout" class="form-label">Workout Name</label>
+                              <input type="text" class="form-control" name="workouts[0][workout_name]" id="workout" aria-describedby="emailHelp" />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="file" class="form-label">Introductory Video</label>
+                              <input type="file" class="form-control" id="file" name="workouts[0][workout_intro_video]" />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="file" class="form-label">Workout Text Bio</label>
+                              <textarea name="workouts[0][workout_text_bio]" class="form-control"></textarea>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="trainingType" class="form-label">Training Type:</label>
+                              <select multiple="multiple" name="workouts[0][workout_training_type]" class="form-control trainingType">
+                                  <option value="Body">Body</option>
+                                  <option value="Legs">Legs</option>
+                                  <option value="Back">Back</option>
+                                  <option value="Shoulder">Shoulder</option>
+                              </select>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="equipmentNeeded" class="form-label">Equipment Needed:</label>
+                              <select multiple="multiple" name="workouts[0][workout_equi_needed]" class="form-control equipmentNeeded">
+                                  <option value="Body">Body</option>
+                                  <option value="Legs">Legs</option>
+                                  <option value="Back">Back</option>
+                                  <option value="Shoulder">Shoulder</option>
+                              </select>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="timeInput" class="form-label">Estimated Duration (hours)</label>
+                              <input type="time" id="timeInput" name="workouts[0][workout_estimated_duration]" class="form-control" />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="restDays" class="form-label">Rest (Days)</label>
+                              <input type="tel" class="form-control" id="restDays" name="workouts[0][workout_rest_days]" placeholder="1" oninput="validateNumericInput(this)" />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="exercises" class="form-label">Number of Exercises</label>
+                              <input type="number" class="form-control" name="workouts[0][workout_number_of_exercises]" id="exercises" aria-describedby="emailHelp" />
+                          </div>
+                      </div>
+                      
+                          <div class="">
+                              <div class="">
+                                  <button type="button" class="add-set btn btn-primary mb-3">Add Set</button>
+                                  <button type="button" class="remove-set btn btn-primary mb-3">Remove Set</button>
+                              </div>
+                              <div class="row set-section mb-3 bg-light py-3 rounded-3">
+                                  <h2 id="set-heading">Set 1</h2>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="setType" class="form-label">Set Type</label>
+                                      <select class="form-select" name="workouts[0][sets][set_type]" id="setType" aria-label="Default select example">
+                                          <option selected>Select Type</option>
+                                          <option value="set">Set</option>
+                                          <option value="super-set">Super Set</option>
+                                      </select>
+                                  </div>
+                                  {{-- <div class="col-md-6 mb-3">
+                                      <label for="setType" class="form-label">Exercise</label>
+                                      <div class="row set-type-set">
+                                          <div class="col-md-4">
+                                              <input class="form-check-input" type="radio" name="workouts[sets][0][exercise]" value="1"
+                                                  id="flexRadioDefault1">
+                                              <label class="form-check-label" for="flexRadioDefault1">
+                                                  Exercise 1
+                                              </label>
+                                          </div>
+                                          <div class=" col-md-4">
+                                              <input class="form-check-input" type="radio" name="workouts[sets][0][exercise]" value="2"
+                                                  id="flexRadioDefault2">
+                                              <label class="form-check-label" for="flexRadioDefault2">
+                                                  Exercise 2
+                                              </label>
+                                          </div>
+                                          <div class=" col-md-4">
+                                              <input class="form-check-input" type="radio" name="workouts[sets][0][exercise]" value="3"
+                                                  id="flexRadioDefault3">
+                                              <label class="form-check-label" for="flexRadioDefault3">
+                                                  Exercise 3
+                                              </label>
+                                          </div>
+                                          <!-- Add more exercises as needed -->
+                                      </div>
+                                      
+                                  </div> --}}
+                                  <div class="col-md-6 mb-3">
+                                      <label for="set-time-number" class="form-label">Number of Time Set</label>
+                                      <input type="number" class="form-control" name="workouts[0][sets][set_number_of_time_set]" id="set-time-number" />
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="intra-set-rest" class="form-label">Intra-Set Rest</label>
+                                      <input type="number" name="workouts[0][sets][set_intra_set_rest]" class="form-control" id="intra-set-rest" />
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="inter-set-rest" class="form-label">Inter-Set Rest</label>
+                                      <input type="number" class="form-control" name="workouts[0][sets][set_inter_set_rest]" id="inter-set-rest" />
+                                  </div>
+                                  <div class="mb-3 col-md-6">
+                                      <label for="Duration-set" class="form-label">Duration of Set</label>
+                                      <input type="time" id="Duration-set" name="workouts[0][sets][set_duration_set]" class="form-control" />
+                                  </div>
+                              </div>
+                              <div class="">
+                                  <button type="button" class="add-exercise btn btn-primary mb-3">Add Exercise</button>
+                                  <button type="button" class="remove-exercise btn btn-primary mb-3">Remove Exercise</button>
+                              </div>
+                              <div class="row exercise-section mb-3 bg-light p-3 rounded-3">
+                                  <h2 id="exercise-heading">Exercise 1</h2>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="set-time-number" class="form-label">Text Bio</label>
+                                      <div class="form-floating">
+                                          <textarea class="form-control" name="workouts[0][sets][exercises][exercise_text_bio]" placeholder="Leave a comment here"
+                                              id="floatingTextarea"></textarea>
+                                          <label for="floatingTextarea">Comments</label>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="repeat-num" class="form-label">Number of Repetition</label>
+                                      <input type="number" class="form-control" name="workouts[0][sets][exercises][exercise_number_of_repeat]" id="repeat-num" />
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="formFile" class="form-label">Default file input example</label>
+                                      <input class="form-control" type="file" name="workouts[0][sets][exercises][exercise_input_example]" id="formFile">
+                                  </div>
+                              </div>
+                          </div>
+      
+                      </div>
+                  </div>
+              </div>
+          </div>
